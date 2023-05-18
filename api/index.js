@@ -29,7 +29,7 @@ app.use(express.json());
 
 
 app.use('/',(req,res)=>{
-    res.json({message:"Hello Testing Express JS App"})
+    res.json({message:`Hello Testing Express JS App${process.env.VAL}`})
 });
 
 
