@@ -26,14 +26,15 @@ app.use(cors(corsOptions));
 connectMongo();
 app.use(express.json());
 
-
-
-app.use('/',(req,res)=>{
-    res.json({message:`Hello Testing Express JS App${process.env.VAL}`})
-});
-
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
+app.get('/',(req,res)=>{
+    res.json({message:`Hello Testing Express JS App${process.env.VAL}`})
+});
+app.use('/sammy',require('../routes/quote'));
+
+
 module.exports = app;
